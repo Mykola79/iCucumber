@@ -22,3 +22,46 @@ Feature: Login Functionalities
     #     : This is always created inside the StepDefinitions folder
     #     : Hooks will take care of pre and post conditions irrespective
     #     : of what goes in between the test steps
+
+  #Background is a clubbing of common steps in different scenarios of a feature file till flow is not broken
+
+  #1Hard Code
+  #2 config file
+
+  #______Cucumber itself provides multiple option through which we can feed data from feature file into Step Definition
+
+  #3Regular Expressions
+  #put the data in double quotes[""]
+  #4Scenario Outline provides an alternative to Data Driven Testing.Feature.
+  #also supports parametarization
+
+  #Parameterization is executing the same test case with multiple data
+
+  #If you want to use parameterization
+#If you wish to implement data driven testing
+  # Scenario Outline is always used along with the keyword 'Examples'
+
+
+  @scenarioOutline
+  #Parametarization/Data Driven
+  Scenario Outline: Login with multiple credentials using Scenario Outline
+    #Scenario: Valid Admin login
+    #Given open the browser and launch HRMS application
+    When user enters valid "<username>" and valid "<password>"
+    And click on login button
+    Then user is logged in successfully into the application
+    #And Close the browser
+    Examples:
+      | username | password |
+      | admin    | Hum@nhrm123 |
+      | ADMIN    | Hum@nhrm123 |
+      | Jason    | Hum@nhrm123 |
+
+    @dataTable
+  Scenario: Login with multiple credentials using Data Table
+    When user enters username and password and verifies login
+      | username | password |
+      | admin    | Hum@nhrm123 |
+      | ADMIN    | Hum@nhrm123 |
+      | Jason    | Hum@nhrm123 |
+

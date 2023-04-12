@@ -1,5 +1,6 @@
 package Utils;
 
+import io.cucumber.core.internal.com.fasterxml.jackson.databind.annotation.JsonAppend;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,9 +18,9 @@ public class CommonMethods {
 
     public static void openBrowserAndLaunchApplication(){
 
-        ConfigReader.readProperties();
+        PropertyReader.readProperties();
 
-        String browserType=ConfigReader.getPropertyValue("browserType");
+        String browserType=PropertyReader.getPropertyValue("browserType");
         switch (browserType){
             case"Chrome":driver=new ChromeDriver();break;
             case "FireFox":driver=new FirefoxDriver();break;
@@ -29,7 +30,7 @@ public class CommonMethods {
         driver.manage().window().maximize();
 
 
-        driver.get(ConfigReader.getPropertyValue("url"));
+        driver.get(PropertyReader.getPropertyValue("url"));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(Constants.WAIT_TIME));
     }
     public static void closeBrowser(){
@@ -49,12 +50,14 @@ public class CommonMethods {
     public static Select clickOnDropdown(WebElement element){
         Select select=new Select(element);
         return select;
-    }public static void selectByValue(WebElement element, String  value){
+    }
+    public static void selectByValue(WebElement element, String  value){
         clickOnDropdown(element).selectByValue(value);
-    }public static void selectByVisibleText(WebElement element,String text) {
-
+    }
+    public static void selectByVisibleText(WebElement element,String text) {
         clickOnDropdown(element).selectByVisibleText(text);
-    }public static void selectByIndex(WebElement element,int index){
+    }
+    public static void selectByIndex(WebElement element,int index){
         clickOnDropdown(element).selectByIndex(index);
     }
     public static void selectByOptions(WebElement element,String text){

@@ -1,7 +1,8 @@
 package StepDefinitions;
 
 import Utils.CommonMethods;
-import Utils.ConfigReader;
+//import Utils.ConfigReader;
+import Utils.PropertyReader;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,7 +13,7 @@ public class EmployeeSearch extends CommonMethods {
     public void user_enters_valid_employee_id() {
 
         WebElement empIdTextBox=driver.findElement(By.id("empsearch_id"));
-        sendText(empIdTextBox, ConfigReader.getPropertyValue("empid"));
+        sendText(empIdTextBox, PropertyReader.getPropertyValue("empid"));
 
     }
     @When("Clicks on search button")
