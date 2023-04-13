@@ -1,5 +1,6 @@
 package Utils;
 
+import StepDefinitions.PageInitializer;
 import io.cucumber.core.internal.com.fasterxml.jackson.databind.annotation.JsonAppend;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ import java.time.Duration;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-public class CommonMethods {
+public class CommonMethods extends PageInitializer {
     public static WebDriver driver;
 
     public static void openBrowserAndLaunchApplication(){
@@ -32,6 +33,8 @@ public class CommonMethods {
 
         driver.get(PropertyReader.getPropertyValue("url"));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(Constants.WAIT_TIME));
+        initializePageObjects();//This will initialize all the pages we have in our
+        //PageInitializer class along with the launching of application
     }
     public static void closeBrowser(){
         driver.close();

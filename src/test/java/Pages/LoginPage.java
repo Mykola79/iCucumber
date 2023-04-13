@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends CommonMethods {
 
-    public LoginPage()
+    public LoginPage()//=Constructor to initialize the WebElement on the current Page
     {
         PageFactory.initElements(driver, this);
     }
@@ -28,9 +28,5 @@ public class LoginPage extends CommonMethods {
 
     @FindBy(xpath = "//a[text()='Logout']")
     public WebElement logoutLink;
-
-
-
-
     //Page Factory Model
 }

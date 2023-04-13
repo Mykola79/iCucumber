@@ -65,3 +65,6 @@ Feature: Login Functionalities
       | ADMIN    | Hum@nhrm123 |
       | Jason    | Hum@nhrm123 |
 
+
+      #POM an object repository [ It stores or holds all the Webelements]
+
