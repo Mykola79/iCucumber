@@ -53,12 +53,13 @@ Feature: Login Functionalities
     #And Close the browser
     Examples:
       | username | password |
-      | admin    | Hum@nhrm123 |
+      | admi    | Hum@nhrm123 |
       | ADMIN    | Hum@nhrm123 |
       | Jason    | Hum@nhrm123 |
 
     @dataTable
   Scenario: Login with multiple credentials using Data Table
+
     When user enters username and password and verifies login
       | username | password |
       | admin    | Hum@nhrm123 |

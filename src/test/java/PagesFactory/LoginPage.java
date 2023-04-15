@@ -1,17 +1,12 @@
-package Pages;
+package PagesFactory;
 
 import Utils.CommonMethods;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends CommonMethods {
+public class LoginPage extends CommonMethods {//Page Factory Model
 
-    public LoginPage()//=Constructor to initialize the WebElement on the current Page
-    {
-        PageFactory.initElements(driver, this);
-    }
 
     @FindBy(id = "txtUsername")
     public WebElement usernameTextBox;
@@ -28,5 +23,11 @@ public class LoginPage extends CommonMethods {
 
     @FindBy(xpath = "//a[text()='Logout']")
     public WebElement logoutLink;
-    //Page Factory Model
+
+
+    public LoginPage() {
+        PageFactory.initElements(driver, this);}
+
+
+
 }
