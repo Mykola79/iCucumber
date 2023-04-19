@@ -17,6 +17,6 @@ public class PageInitializer {
 
         login = new LoginPage();
         addEmployeePage = new AddEmployeePage();
-        employeeSearchPage=new EmployeeSearchPage();
+        employeeSearchPage = new EmployeeSearchPage();
     }
 }

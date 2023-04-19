@@ -24,6 +24,7 @@ public class EmployeeSearchPage extends CommonMethods {
     public WebElement includeDdl;
 
     public EmployeeSearchPage(){
+
         PageFactory.initElements(driver,this);
     }
 }

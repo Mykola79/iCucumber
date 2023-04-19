@@ -2,6 +2,7 @@ package Utils;
 
 import StepDefinitions.PageInitializer;
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.w3c.dom.DOMConfiguration;
 
 import java.io.File;
 import java.io.IOException;
@@ -26,23 +28,29 @@ public class CommonMethods extends PageInitializer {
 
         ConfigReader.readProperties();
 
-        String browserType= ConfigReader.getPropertyValue("browserType");
-        switch (browserType){
-            case"Chrome":driver=new ChromeDriver();break;
-            case "FireFox":driver=new FirefoxDriver();break;
-            case  "IE":driver=new InternetExplorerDriver();break;
-            default: driver=new EdgeDriver();break;
+        String browser= ConfigReader.getPropertyValue("browser");
+        switch (browser){
+            case"Chrome":driver = new ChromeDriver();break;
+            case "FireFox":driver = new FirefoxDriver();break;
+            case  "IE":driver = new InternetExplorerDriver();break;
+            default: driver = new EdgeDriver();break;
         }
         driver.manage().window().maximize();
-
-
         driver.get(ConfigReader.getPropertyValue("url"));
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(Constants.WAIT_TIME));
 
         initializePageObjects();//This will initialize all the pages we have in our
-        //PageInitializer class along with the launching of application
+                                //PageInitializer class along with the launching of application
+        //To configure the File and pattern it has
+        DOMConfigurator.configure("log4j.xml");
+        Log.startTestCase("This is the beginning of my Test case");
+        Log.info("My test is executing right now");
+        Log.warning("My test case might have some trivial issues");
     }
     public static void closeBrowser(){
+
+        Log.info("This case is about to get completed");
+        Log.endTestCase("This test case is finished");
         driver.close();
     }
 
@@ -50,7 +58,7 @@ public class CommonMethods extends PageInitializer {
         element.click();
 }
 
-    public static void sendText(WebElement element, String text) {
+    public static void sendKeyys(WebElement element, String text) {
         element.clear();
         element.sendKeys(text);
     }

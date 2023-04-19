@@ -1,0 +1,9 @@
+2023-04-18 20:49:35 INFO  Log:15 - ********************************
+2023-04-18 20:49:35 INFO  Log:16 - ********************************
+2023-04-18 20:49:35 INFO  Log:17 - *************This is the beginning of my Test case*******************
+2023-04-18 20:49:35 INFO  Log:28 - My test is executing right now
+2023-04-18 20:49:35 INFO  Log:33 - My test case might have some trivial issues
+2023-04-18 20:49:53 INFO  Log:28 - This case is about to get completed
+2023-04-18 20:49:53 INFO  Log:22 - ###################################
+2023-04-18 20:49:53 INFO  Log:23 - ###################################
+2023-04-18 20:49:53 INFO  Log:24 - ############This test case is finished#######################

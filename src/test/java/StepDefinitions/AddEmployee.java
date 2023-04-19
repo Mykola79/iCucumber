@@ -28,16 +28,16 @@ public class AddEmployee extends CommonMethods {
 
         //driver.findElement(By.id("firstName")).sendKeys(ConfigReader.getPropertyValue("firstname"));
         //WebElement firstNameTextBox = driver.findElement(By.id("firstName"));
-        sendText(addEmployeePage.firstNameTextBox, ConfigReader.getPropertyValue("firstname"));
+        sendKeyys(addEmployeePage.firstNameTextBox, ConfigReader.getPropertyValue("firstname"));
 
         //driver.findElement(By.id("middleName")).sendKeys(ConfigReader.getPropertyValue("middlename"));
 
         //WebElement middleNameTextBox = driver.findElement(By.id("middleName"));
-        sendText(addEmployeePage.middleNameTextBox, ConfigReader.getPropertyValue("middlename"));
+        sendKeyys(addEmployeePage.middleNameTextBox, ConfigReader.getPropertyValue("middlename"));
 
         //driver.findElement(By.id("lastName")).sendKeys(ConfigReader.getPropertyValue("lastname"));
         //WebElement lastNameTextBox = driver.findElement(By.id("lastName"));
-        sendText(addEmployeePage.lastNameTextBox, ConfigReader.getPropertyValue("lastname"));
+        sendKeyys(addEmployeePage.lastNameTextBox, ConfigReader.getPropertyValue("lastname"));
 
     }
     /*@When("user clicks on save button")

@@ -12,8 +12,8 @@ public class ConfigReader {
 
 
         try {
-            FileInputStream file=new FileInputStream(Constants.PROPERTY_FILE_PATH);
-            prop=new Properties();
+            FileInputStream file = new FileInputStream(Constants.PROPERTY_FILE_PATH);
+            prop = new Properties();
             prop.load(file);
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);

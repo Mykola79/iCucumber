@@ -24,8 +24,8 @@ public class Login extends CommonMethods {
     public void user_enters_valid_email_and_valid_password() {
 
         //LoginPage login = new LoginPage();
-        sendText(login.usernameTextBox, ConfigReader.getPropertyValue("username"));
-        sendText(login.passwordTextBox, ConfigReader.getPropertyValue("password"));
+        sendKeyys(login.usernameTextBox, ConfigReader.getPropertyValue("username"));
+        sendKeyys(login.passwordTextBox, ConfigReader.getPropertyValue("password"));
     }
 
     @When("click on login button")
@@ -52,8 +52,8 @@ public class Login extends CommonMethods {
     public void user_enters_valid_and_valid(String username, String password) {
 
         //LoginPage login = new LoginPage();
-        sendText(login.usernameTextBox, username);
-        sendText(login.passwordTextBox, password);
+        sendKeyys(login.usernameTextBox, username);
+        sendKeyys(login.passwordTextBox, password);
     }
 
     @When("user enters username and password and verifies login")
@@ -67,8 +67,9 @@ public class Login extends CommonMethods {
             String username = userCreds.get("username");
             String password = userCreds.get("password");
 
-            sendText(login.usernameTextBox, username);
-            sendText(login.passwordTextBox, password);
+            sendKeyys(login.usernameTextBox, username);
+            sendKeyys(login.passwordTextBox, password);
+
             doClick(login.loginBtn);
             doClick(login.welcomeIcon);
             doClick(login.logoutLink);
