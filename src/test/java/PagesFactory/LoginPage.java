@@ -27,7 +27,4 @@ public class LoginPage extends CommonMethods {//Page Factory Model
 
     public LoginPage() {
         PageFactory.initElements(driver, this);}
-
-
-
 }

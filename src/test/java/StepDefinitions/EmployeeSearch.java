@@ -12,7 +12,7 @@ public class EmployeeSearch extends CommonMethods {
 
         //WebElement empIdTextBox=driver.findElement(By.id("empsearch_id"));
         //sendText(employeeSearchPage.empIdTextBox, PropertyReader.getPropertyValue("empid"));
-        sendKeyys(employeeSearchPage.empIdTextBox, ConfigReader.getPropertyValue("empid"));
+        sendText(employeeSearchPage.empIdTextBox, ConfigReader.getPropertyValue("empid"));
 
     }
     @When("Clicks on search button")

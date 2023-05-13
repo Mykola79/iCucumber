@@ -51,14 +51,15 @@ public class CommonMethods extends PageInitializer {
 
         Log.info("This case is about to get completed");
         Log.endTestCase("This test case is finished");
-        driver.close();
+        //driver.close();
     }
 
     public static void doClick(WebElement element){
+
         element.click();
 }
 
-    public static void sendKeyys(WebElement element, String text) {
+    public static void sendText(WebElement element, String text) {
         element.clear();
         element.sendKeys(text);
     }
@@ -67,7 +68,7 @@ public class CommonMethods extends PageInitializer {
 //====================Select Class===================================
 
     public static Select clickOnDropdown(WebElement element){
-        Select select=new Select(element);
+        Select select = new Select(element);
         return select;
     }
     public static void selectByValue(WebElement element, String  value){
@@ -81,9 +82,9 @@ public class CommonMethods extends PageInitializer {
     }
 
     public static void selectByOptions(WebElement element,String text){
-        List<WebElement> options=clickOnDropdown(element).getOptions();
+        List<WebElement> options = clickOnDropdown(element).getOptions();
         for (WebElement option:options){
-            String ddOptionText=option.getText();
+            String ddOptionText = option.getText();
             if (ddOptionText.equals(text)){
                 option.click();
             }
