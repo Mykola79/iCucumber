@@ -69,6 +69,7 @@ public class AddEmployee extends CommonMethods {
 
     @When("query the information in backend")
     public void query_the_information_in_backend() {
+        //String query = "select * from hs_hr_employees where employee_id='"+GlobalVariables.emp_id+"'";
         String query = "select * from hs_hr_employees where employee_id='"
                 + GlobalVariables.emp_id+"'";
         //to store the table coming from db, we used global variable here
