@@ -27,8 +27,7 @@ public class LoginPracticePage extends CommonMethods {
 
 
     public LoginPracticePage(){
+
         PageFactory.initElements(driver,this);
     }
-
-
 }

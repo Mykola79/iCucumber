@@ -36,7 +36,24 @@ public class LoginPractice extends CommonMethods {
 
 
             doClick(loginPracticePage.welckAdm);
-            doClick(loginPracticePage.logOutBtnn);
+            //doClick(loginPracticePage.logOutBtnn);
+
+
+
+            /*List<Map<String, String>> userCredentials = dataTable.asMaps();
+
+            for (Map<String, String> userCreds : userCredentials) {
+                String username = userCreds.get("username");
+                String password = userCreds.get("password");
+
+                sendText(login.usernameTextBox, username);
+                sendText(login.passwordTextBox, password);
+
+                doClick(login.loginBtn);
+
+
+                doClick(login.welcomeIcon);
+                doClick(login.logoutLink);*/
         }
     }
 }

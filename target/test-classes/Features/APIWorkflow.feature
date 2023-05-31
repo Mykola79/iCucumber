@@ -4,15 +4,8 @@ Feature: API workflow for HRMS
     Given a JWT is generated
 
 
-  #@api
-  #Scenario: create an employee using API call
-   # Given a request is prepared to create an employee
-    #When a POST call is made to create an employee
-    #Then the status code for creating an employee is 201
-    #Then the employee contains key "Message" and value "Employee Created"
-    #Then the employee id "Employee.employee_id" is stored as a global variable to be used for other calls
 
-  @api
+    @api
     Scenario: create an employee using API call
     Given a request is prepared to create an employee
     When a POST call is made to create an employee
@@ -21,17 +14,7 @@ Feature: API workflow for HRMS
     Then the employee id "Employee.employee_id" is stored as a global variable to be used for other calls
 
 
-
-
-    #@apijsonworkflow
-    #Scenario: create an employee using API call
-    #Given a request is prepared to create an employee using json payload
-    #When a POST call is made to create an employee
-    #Then the status code for creating an employee is 201
-    #Then the employee contains key "Message" and value "Employee Created"
-    #Then the employee id "Employee.employee_id" is stored as a global variable to be used for other calls
-
-    @apijsonworkflow
+      @apijsonworkflow
       Scenario: create an employee using API call
       Given a request is prepared to create an employee using json payload
       When a POST call is made to create an employee
@@ -41,19 +24,7 @@ Feature: API workflow for HRMS
 
 
 
-
-
-  #@apijsonworkflow
-  #Scenario: retrieve an employee using API call
-    #Given a request is prepared to get the created employee
-    #When a GET call is made to get the employee
-    #Then the status code for this employee is 200
-    #Then the employee data we get having id "employee.employee_id" must match with globally stored employee id
-    #Then the retrieved data at "employee" object matches with the data of created employee
-     # |emp_firstname|emp_lastname|emp_middle_name|emp_gender|emp_birthday|emp_status|emp_job_title|
-     # |Bob       |Bober       |ms             |Male    |1999-09-29  |confirmed |Engineer     |
-
-  @apijsonworkflow
+    @apijsonworkflow
     Scenario: retrieve an employee using API call
     Given a request is prepared to get the created employee
     When a GET call is made to get the employee
@@ -61,19 +32,18 @@ Feature: API workflow for HRMS
     Then the employee data we get having id "employee.employee_id" must match with globally stored employee id
     Then the retrieved data at "employee" object matches with the data of created employee
     |emp_firstname|emp_middle_name|emp_lastname|emp_birthday|emp_gender|emp_job_title|emp_status|
-    |Bob          |ms             |Bober       |1999-09-29  |Male      |Engineer    |Confirmed |
+    |Bob          |ms             |Bober       |1999-09-29  |Male      |Engineer    |confirmed |
 
 
 
-
-
-  @dynamic
+  @dyanamic
   Scenario: create an employee using API call
     Given a request is prepared to create an employee with dynamic data "Bob" , "Bober" , "ms" , "M" , "1999-09-29" , "Confirmed" , "Engineer"
     When a POST call is made to create an employee
     Then the status code for creating an employee is 201
     Then the employee contains key "Message" and value "Employee Created"
     Then the employee id "Employee.employee_id" is stored as a global variable to be used for other calls
+
 
 
   @updateemployee

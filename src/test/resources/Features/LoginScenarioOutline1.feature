@@ -6,7 +6,7 @@ Feature: login Features
     Given open the browser and launch HRMS applicationnn
     When user eneters valid "<username>" and "<password>"
     And user clics loginn
-    Then user is loggged in successfully
+    Then user is loggged in successfully "Welcome Admin"
     Examples:
     |username|password|
     | admin       | Hum@nhrm123  |

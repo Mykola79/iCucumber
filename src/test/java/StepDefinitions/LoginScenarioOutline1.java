@@ -4,6 +4,7 @@ import Utils.CommonMethods;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class LoginScenarioOutline1 extends CommonMethods {
 
@@ -17,18 +18,26 @@ public class LoginScenarioOutline1 extends CommonMethods {
 
     @When("user eneters valid {string} and {string}")
     public void user_eneters_valid_and(String username, String password) {
+        sendText(login.usernameTextBox,username);
+        sendText(login.passwordTextBox,password);
+
 
 
 
     }
     @When("user clics loginn")
     public void user_clics_loginn() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        doClick(login.loginBtn);
+
+
     }
-    @Then("user is loggged in successfully")
-    public void user_is_loggged_in_successfully() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("user is loggged in successfully {string}")
+    public void user_is_loggged_in_successfully(String string) {
+
+        if(login.welcomeIcon.isDisplayed()){
+            Assert.assertEquals(string,login.welcomeIcon);
+        }
+
     }
 }
